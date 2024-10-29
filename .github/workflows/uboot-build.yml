@@ -45,6 +45,8 @@ jobs:
           SOC=mt7981 BOARD=cmcc_rax3000m ./build.sh
           SOC=mt7981 BOARD=cmcc_xr30-emmc ./build.sh
           SOC=mt7981 BOARD=cmcc_xr30 ./build.sh
+          SOC=mt7981 BOARD=glinet_gl-mt2500 ./build.sh
+          SOC=mt7981 BOARD=glinet_gl-mt3000 ./build.sh
           SOC=mt7981 BOARD=h3c_magic-nx30-pro ./build.sh
           SOC=mt7981 BOARD=honor_fur-602 MULTI_LAYOUT=1 ./build.sh
           SOC=mt7981 BOARD=imou_lc-hx3001 ./build.sh
@@ -54,6 +56,7 @@ jobs:
           SOC=mt7981 BOARD=newland_nl-wr8103 MULTI_LAYOUT=1 ./build.sh
           SOC=mt7981 BOARD=newland_nl-wr9103 MULTI_LAYOUT=1 ./build.sh
           SOC=mt7981 BOARD=nokia_ea0326gmp ./build.sh
+          SOC=mt7981 BOARD=openembed_som7981 ./build.sh
           SOC=mt7981 BOARD=ruijie_rg_x30e MULTI_LAYOUT=1 ./build.sh
           SOC=mt7981 BOARD=ruijie_rg_x30e_pro MULTI_LAYOUT=1 ./build.sh
           SOC=mt7981 BOARD=wr30u MULTI_LAYOUT=1 ./build.sh
