@@ -38,6 +38,7 @@ jobs:
           SOC=mt7981 BOARD=360t7 ./build.sh
           SOC=mt7981 BOARD=abt_asr3000 ./build.sh
           SOC=mt7981 BOARD=ax3000t MULTI_LAYOUT=1 ./build.sh
+          SOC=mt7981 BOARD=ax3000t_an8855 MULTI_LAYOUT=1 ./build.sh
           SOC=mt7981 BOARD=cetron_ct3003 ./build.sh
           SOC=mt7981 BOARD=clt_r30b1 MULTI_LAYOUT=1 ./build.sh
           SOC=mt7981 BOARD=cmcc_a10 ./build.sh
