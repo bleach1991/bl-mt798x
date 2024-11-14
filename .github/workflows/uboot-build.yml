@@ -66,6 +66,7 @@ jobs:
           SOC=mt7986 BOARD=jdcloud_re-cp-03 ./build.sh
           SOC=mt7986 BOARD=redmi_ax6000 MULTI_LAYOUT=1 ./build.sh
           SOC=mt7986 BOARD=ruijie_rg-x60-pro MULTI_LAYOUT=1 ./build.sh
+          SOC=mt7986 BOARD=ruijie_rg-x60 MULTI_LAYOUT=1 ./build.sh
           SOC=mt7986 BOARD=tplink_tl-xdr608x ./build.sh
           SOC=mt7986 BOARD=tplink_tl-xtr8488 ./build.sh
           SOC=mt7986 BOARD=zyxel_ex5700 ./build.sh
