@@ -35,41 +35,8 @@ jobs:
   
       - name: make
         run: |
-          SOC=mt7981 BOARD=360t7 ./build.sh
-          SOC=mt7981 BOARD=abt_asr3000 ./build.sh
-          SOC=mt7981 BOARD=ax3000t MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7981 BOARD=ax3000t_an8855 MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7981 BOARD=cetron_ct3003 ./build.sh
-          SOC=mt7981 BOARD=clt_r30b1 MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7981 BOARD=cmcc_a10 ./build.sh
-          SOC=mt7981 BOARD=cmcc_rax3000m-emmc ./build.sh
-          SOC=mt7981 BOARD=cmcc_rax3000m ./build.sh
-          SOC=mt7981 BOARD=cmcc_xr30-emmc ./build.sh
-          SOC=mt7981 BOARD=cmcc_xr30 ./build.sh
-          SOC=mt7981 BOARD=glinet_gl-mt2500 ./build.sh
-          SOC=mt7981 BOARD=glinet_gl-mt3000 ./build.sh
-          SOC=mt7981 BOARD=h3c_magic-nx30-pro ./build.sh
-          SOC=mt7981 BOARD=honor_fur-602 MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7981 BOARD=imou_lc-hx3001 ./build.sh
-          SOC=mt7981 BOARD=jcg_q30 ./build.sh
-          SOC=mt7981 BOARD=konka_komi-a31 ./build.sh
-          SOC=mt7981 BOARD=livinet_zr-3020 ./build.sh
-          SOC=mt7981 BOARD=newland_nl-wr8103 MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7981 BOARD=newland_nl-wr9103 MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7981 BOARD=nokia_ea0326gmp ./build.sh
-          SOC=mt7981 BOARD=openembed_som7981 ./build.sh
-          SOC=mt7981 BOARD=ruijie_rg-x30e MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7981 BOARD=ruijie_rg-x30e-pro MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7981 BOARD=wr30u MULTI_LAYOUT=1 ./build.sh
-
-          SOC=mt7986 BOARD=glinet_gl-mt6000 ./build.sh
-          SOC=mt7986 BOARD=jdcloud_re-cp-03 ./build.sh
-          SOC=mt7986 BOARD=redmi_ax6000 MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7986 BOARD=ruijie_rg-x60-pro MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7986 BOARD=ruijie_rg-x60 MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7986 BOARD=tplink_tl-xdr608x ./build.sh
-          SOC=mt7986 BOARD=tplink_tl-xtr8488 ./build.sh
-          SOC=mt7986 BOARD=zyxel_ex5700 ./build.sh
+          ls uboot-mtk-20230718-09eda825/configs/mt7981_* |grep -v rfb | xargs -i basename {} |awk -F 'mt7981_' '{print $2}'|awk -F '_defconfig' '{print $1}'|awk -F '_multi_layout' '{print $1}'|uniq -c|awk '{ if($1==2)  {print "SOC=mt7981 BOARD="$2,"MULTI_LAYOUT=1 ./build.sh"} else {print "SOC=mt7981 BOARD="$2,"./build.sh"}}'| bash
+          ls uboot-mtk-20230718-09eda825/configs/mt7986_* |grep -v rfb | xargs -i basename {} |awk -F 'mt7986_' '{print $2}'|awk -F '_defconfig' '{print $1}'|awk -F '_multi_layout' '{print $1}'|uniq -c|awk '{ if($1==2)  {print "SOC=mt7986 BOARD="$2,"MULTI_LAYOUT=1 ./build.sh"} else {print "SOC=mt7986 BOARD="$2,"./build.sh"}}'| bash
   
       - name: check
         run: |
