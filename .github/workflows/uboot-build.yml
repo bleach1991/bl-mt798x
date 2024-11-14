@@ -59,7 +59,7 @@ jobs:
           SOC=mt7981 BOARD=nokia_ea0326gmp ./build.sh
           SOC=mt7981 BOARD=openembed_som7981 ./build.sh
           SOC=mt7981 BOARD=ruijie_rg-x30e MULTI_LAYOUT=1 ./build.sh
-          SOC=mt7981 BOARD=ruijie_rg-x30e_pro MULTI_LAYOUT=1 ./build.sh
+          SOC=mt7981 BOARD=ruijie_rg-x30e-pro MULTI_LAYOUT=1 ./build.sh
           SOC=mt7981 BOARD=wr30u MULTI_LAYOUT=1 ./build.sh
 
           SOC=mt7986 BOARD=glinet_gl-mt6000 ./build.sh
