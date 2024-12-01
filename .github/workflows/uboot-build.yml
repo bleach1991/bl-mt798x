@@ -26,7 +26,7 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo -E apt update
-          sudo -E apt -y install gcc-aarch64-linux-gnu build-essential flex bison libssl-dev device-tree-compiler
+          sudo -E apt -y install gcc-aarch64-linux-gnu build-essential flex bison libssl-dev device-tree-compiler qemu-user-static
           sudo -E apt clean
           sudo -E timedatectl set-timezone "Asia/Shanghai"
 
