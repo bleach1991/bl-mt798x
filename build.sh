@@ -27,14 +27,8 @@ export CROSS_COMPILE="$TOOLCHAIN"
 
 ATF_CFG="${SOC}_${BOARD}_defconfig"
 UBOOT_CFG="${SOC}_${BOARD}_defconfig"
-for file in "$ATF_DIR/configs/$ATF_CFG" "$UBOOT_DIR/configs/$UBOOT_CFG"; do
-	if [ ! -f "$file" ]; then
-		echo "$file not found!"
-		exit 1
-	fi
-done
 
-if grep -q "CONFIG_FLASH_DEVICE_EMMC=y" $ATF_DIR/configs/$ATF_CFG ; then
+if grep -Eq "CONFIG_FLASH_DEVICE_EMMC=y|_BOOT_DEVICE_EMMC=y" $ATF_DIR/configs/$ATF_CFG ; then
 	# No fixed-mtdparts or multilayout for EMMC
 	fixedparts=0
 	multilayout=0
@@ -46,6 +40,14 @@ else
 		UBOOT_CFG="${SOC}_${BOARD}_multi_layout_defconfig"
 	fi
 fi
+
+for file in "$ATF_DIR/configs/$ATF_CFG" "$UBOOT_DIR/configs/$UBOOT_CFG"; do
+	if [ ! -f "$file" ]; then
+		echo "$file not found!"
+		exit 1
+	fi
+done
+
 echo "Building for: ${SOC}_${BOARD}, fixed-mtdparts: $fixedparts, multi-layout: $multilayout"
 echo "u-boot dir: $UBOOT_DIR"
 echo "atf dir: $ATF_DIR"
