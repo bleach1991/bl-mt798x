@@ -45,7 +45,7 @@ jobs:
   
 
       - name: Upload uboot
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: bl-mt798x-release-${{ env.CURRENT_DATE }}
           path: ./output/
